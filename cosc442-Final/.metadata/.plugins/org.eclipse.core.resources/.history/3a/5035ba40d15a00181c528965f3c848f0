@@ -45,7 +45,6 @@ public class Point {
 			return false;
 		if (z != other.z)
 			return false;
-		return true;
 	}
 	
 	public List<Point> neighbors8(){
