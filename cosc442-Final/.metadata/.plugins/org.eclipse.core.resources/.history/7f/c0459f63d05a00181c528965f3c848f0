@@ -175,7 +175,12 @@ public class WorldBuilder {
 		
 		for (int x = 0; x < width; x++){
 			for (int y = 0; y < height; y++){
-				tileFloor(x, y, z, r1, r2, candidates);
+				if (tiles[x][y][z] == Tile.FLOOR
+						&& tiles[x][y][z+1] == Tile.FLOOR
+						&& regions[x][y][z] == r1 
+						&& regions[x][y][z+1] == r2){
+					candidates.add(new Point(x,y,z));
+				}
 			}
 		}
 		

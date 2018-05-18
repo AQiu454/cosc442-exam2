@@ -175,7 +175,7 @@ public class WorldBuilder {
 		
 		for (int x = 0; x < width; x++){
 			for (int y = 0; y < height; y++){
-				tileFloor(x, y, z, r1, r2, candidates);
+				tileFloor((x, y, z, r1, r2, candidates);
 			}
 		}
 		
