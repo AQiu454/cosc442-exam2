@@ -121,7 +121,7 @@ public class Creature {
 		this.food = maxFood / 3 * 2;
 		this.level = 1;
 		this.regenHpPer1000 = 10;
-		this.effects = new ArrayList<>();
+		this.effects = new ArrayList<Effect>();
 		this.maxMana = 5;
 		this.mana = maxMana;
 		this.regenManaPer1000 = 20;
@@ -241,7 +241,7 @@ public class Creature {
 	}
 	
 	private void updateEffects(){
-		List<Effect> done = new ArrayList<>();
+		List<Effect> done = new ArrayList<Effect>();
 		
 		for (Effect effect : effects){
 			effect.update(this);

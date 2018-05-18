@@ -309,7 +309,7 @@ public class Creature {
 	}
 	
 	private List<Creature> getCreaturesWhoSeeMe(){
-		List<Creature> others = new ArrayList<Creature>();
+		List<Creature> others = new ArrayListM<>();
 		int r = 9;
 		for (int ox = -r; ox < r+1; ox++){
 			for (int oy = -r; oy < r+1; oy++){

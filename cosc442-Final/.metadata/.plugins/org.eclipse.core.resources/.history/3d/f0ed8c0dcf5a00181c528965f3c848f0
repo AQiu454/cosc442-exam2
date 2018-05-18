@@ -241,7 +241,7 @@ public class Creature {
 	}
 	
 	private void updateEffects(){
-		List<Effect> done = new ArrayList<>();
+		List<Effect> done = new ArrayList<Effect>();
 		
 		for (Effect effect : effects){
 			effect.update(this);

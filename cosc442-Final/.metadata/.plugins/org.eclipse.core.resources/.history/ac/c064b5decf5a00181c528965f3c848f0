@@ -36,6 +36,7 @@ public class World {
 		return null;
 	}
 	
+	public Tile tile(int x, int y, int z){
 			private boolean xTile(int x, int width)
 			{
 				boolean check = false;
@@ -77,7 +78,6 @@ public class World {
 				}
 				return check;
 			}
-			
 			public Tile tile(int x, int y, int z){ 
 				if ((xTile(x, width))|| (yTile(y, height)) || (zTile(z, depth)))
 			return Tile.BOUNDS;

@@ -77,7 +77,6 @@ public class World {
 				}
 				return check;
 			}
-			
 			public Tile tile(int x, int y, int z){ 
 				if ((xTile(x, width))|| (yTile(y, height)) || (zTile(z, depth)))
 			return Tile.BOUNDS;
