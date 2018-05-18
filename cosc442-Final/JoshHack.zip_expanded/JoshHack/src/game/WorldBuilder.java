@@ -67,6 +67,11 @@ public class WorldBuilder {
 		return this;
 	}
 	
+	private void sizeRemove(int Tsize, int z){
+				if(Tsize<25) removeRegion(nextRegion - 1, z);
+				
+			}
+	
 	private WorldBuilder createRegions(){
 		regions = new int[width][height][depth];
 		
@@ -75,9 +80,7 @@ public class WorldBuilder {
 				for (int y = 0; y < height; y++){
 					if (tiles[x][y][z] != Tile.WALL && regions[x][y][z] == 0){
 						int size = fillRegion(nextRegion++, x, y, z);
-						
-						if (size < 25)
-							removeRegion(nextRegion - 1, z);
+						sizeRemove (size,z);
 					}
 				}
 			}
@@ -98,7 +101,7 @@ public class WorldBuilder {
 	
 	private int fillRegion(int region, int x, int y, int z) {
 		int size = 1;
-		ArrayList<Point> open = new ArrayList<Point>();
+		ArrayList<Point> open = new ArrayList<>();
 		open.add(new Point(x,y,z));
 		regions[x][y][z] = region;
 		
@@ -129,7 +132,7 @@ public class WorldBuilder {
 	}
 	
 	private void connectRegionsDown(int z){
-		List<Integer> connected = new ArrayList<Integer>();
+		List<Integer> connected = new ArrayList<>();
 		
 		for (int x = 0; x < width; x++){
 			for (int y = 0; y < height; y++){
@@ -158,7 +161,7 @@ public class WorldBuilder {
 	}
 
 	public List<Point> findRegionOverlaps(int z, int r1, int r2) {
-		ArrayList<Point> candidates = new ArrayList<Point>();
+		ArrayList<Point> candidates = new ArrayList<>();
 		
 		for (int x = 0; x < width; x++){
 			for (int y = 0; y < height; y++){

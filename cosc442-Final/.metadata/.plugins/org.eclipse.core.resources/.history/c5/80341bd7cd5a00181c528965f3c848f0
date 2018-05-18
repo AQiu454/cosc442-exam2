@@ -1,0 +1,3 @@
+package game;
+
+import org.junit.runner.JUnitCore;
